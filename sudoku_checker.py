@@ -115,7 +115,11 @@ def check_diagonals(user_grid):
 
 
 def check_columns():
-    # Just got to write this function now :D
+    # I have got to write this function.
+    pass
+
+def check_results():
+    # I have got to write this function.
     pass
 
 
