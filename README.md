@@ -7,3 +7,5 @@ For the boxes I broke the puzzle down into 3 blocks of 3 rows and then fed the f
 the column checker function then checks the columns in the grid. if all have numbers 1-9 then the results columns is updated to True.
 
 Finally the program checjks the results dictionary to check that columns, rows and blocks are all true, and if so prints the sudoku is succesful, else it prints there is an erro in the sudoku.
+
+There is another version of this program that puts the variables within the scope of the functions: see the other branch for this code.
