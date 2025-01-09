@@ -1,3 +1,5 @@
+This version of the program moves all the global variables from the program in the master branch and moves them within the scope of the functions.
+
 This script takes 9 user inputs of 9 numbers that are the numbers in their suduko puzzle rows.
 
 It currently checks each row, each box of 9 numbers and the 9 columns to ensure the numbers 1-9 only appear once. Each row is then checked against the checker list, that has the numbers 1-9 in it, as strings.
