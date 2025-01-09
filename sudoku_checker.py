@@ -128,7 +128,7 @@ def check_columns(user_grid):
     for i in range(9):
         column = []
         for j in range (9):
-                column.append(user_grid[j][i])
+            column.append(user_grid[j][i])
         if sorted(column) == check_list:
             column_result += 1
 
