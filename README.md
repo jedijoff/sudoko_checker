@@ -1,4 +1,4 @@
-Currently this script takes 9 user inputs of 9 numbers that are the numbers in their suduko puzzle rows.
+This script takes 9 user inputs of 9 numbers that are the numbers in their suduko puzzle rows.
 
 It currently checks each row, each box of 9 numbers and the 9 columns to ensure the numbers 1-9 only appear once. Each row is then checked against the checker list, that has the numbers 1-9 in it, as strings.
 
