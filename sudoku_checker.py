@@ -1,8 +1,7 @@
 user_grid = []
 check_list = ['1','2','3','4','5','6','7','8','9']
-results = {}
+results = {'rows': False, 'columns': False, 'blocks': False}
 blocks_of_three_rows = ()
-
 
 def check_input(row, i=0):
     # This function is now working as expected do not alter!
@@ -61,9 +60,7 @@ def check_squares(user_grid):
     # This function is now working as expected do not alter!
     global check_list
     global results
-    sq_1 = []
-    sq_2 = []
-    sq_3 = []
+    check_count = 0
 
     for i in range(3):
         sq_1 = []
@@ -84,47 +81,67 @@ def check_squares(user_grid):
             sq_3.append(blocks_of_three_rows[i][1][j])
             sq_3.append(blocks_of_three_rows[i][2][j])
 
+
         if check_list == sorted(sq_1) and sorted(sq_2) and sorted(sq_3):
-            results[f'block_{i}'] = True
+            check_count += 1
+
+        if check_count == 3:
+            results['blocks'] = True
         else:
-            results[f'block_{i}'] = False
+            results['blocks'] = False
 
-    check_diagonals(user_grid)
+    check_columns(user_grid)
 
 
-def check_diagonals(user_grid):
+# def check_diagonals(user_grid):
     # This function is now working as expected do not alter!
+#    global check_list
+#    global results
+#    l_to_r_diag = []
+#    r_to_l_diag = []
+
+#    for i in range(9):
+#        l_to_r_diag.append(user_grid[i][i])
+
+#    for j in range(8,0,-1):
+#        r_to_l_diag.append(user_grid[j][j])
+
+#    print(f'l_to_r_diag{l_to_r_diag}')
+#    print(f'r_to_l_diag{r_to_l_diag}')
+
+#    if check_list == sorted(l_to_r_diag) and sorted(r_to_l_diag):
+#        results['diagonals'] = True
+#    else:
+#        results['diagonals'] = False
+
+
+def check_columns(user_grid):
+    # I have got to write this function.
     global check_list
     global results
-    l_to_r_diag = []
-    r_to_l_diag = []
+    column_result = 0
 
     for i in range(9):
-        l_to_r_diag.append(user_grid[i][i])
+        column = []
+        for j in range (9):
+                column.append(user_grid[j][i])
+        if sorted(column) == check_list:
+            column_result += 1
 
-    for j in range(8,0,-1):
-        r_to_l_diag.append(user_grid[j][j])
+    if column_result == 9:
+        results['columns'] = True
 
-    print(f'l_to_r_diag{l_to_r_diag}')
-    print(f'r_to_l_diag{r_to_l_diag}')
-
-    if check_list == sorted(l_to_r_diag) and sorted(r_to_l_diag):
-        results['diagonals'] = True
-    else:
-        results['diagonals'] = False
-
-
-def check_columns():
-    # I have got to write this function.
-    pass
 
 def check_results():
-    # I have got to write this function.
-    pass
+    global results
+    if results['rows'] and results['blocks'] and results['columns']:
+        print('You have completed the sudoku puzzle correctly.')
+    else:
+        print('You have made an error!')
 
 
 grid_maker()
-print(results)
+check_results()
 
 
 
