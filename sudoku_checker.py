@@ -146,7 +146,3 @@ def check_results():
 
 grid_maker()
 check_results()
-
-
-
-
