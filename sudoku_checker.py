@@ -3,6 +3,7 @@ check_list = ['1','2','3','4','5','6','7','8','9']
 results = {'rows': False, 'columns': False, 'blocks': False}
 blocks_of_three_rows = ()
 
+
 def check_input(row, i=0):
     # This function is now working as expected do not alter!
     global user_grid
@@ -80,7 +81,6 @@ def check_squares(user_grid):
             sq_3.append(blocks_of_three_rows[i][0][j])
             sq_3.append(blocks_of_three_rows[i][1][j])
             sq_3.append(blocks_of_three_rows[i][2][j])
-
 
         if check_list == sorted(sq_1) and sorted(sq_2) and sorted(sq_3):
             check_count += 1
